@@ -18,8 +18,9 @@ class Solution:
                 elif s[i]=='}' and '{' in list1:
                     if list1[-1]=='{':
                         list1.pop()
+                else:
+                    return False
 
-# ( )[]{}        
         if list1==[]:
             return True
         
