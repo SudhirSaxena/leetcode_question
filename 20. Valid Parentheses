@@ -1,0 +1,25 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        list1=[]
+        if len(s)==1:
+            return False
+        elif s[0]==')' or s[0]==']' or s[0]=='}':
+            return False
+        else:
+            for i in range(len(s)):
+                if s[i]=='(' or s[i]=='[' or s[i]=='{':
+                    list1.append(s[i])
+                elif s[i] ==')' and '(' in list1:
+                    if list1[-1]=='(':
+                        list1.pop()
+                elif s[i] ==']' and '[' in list1:
+                    if list1[-1]=='[':
+                        list1.pop()
+                elif s[i]=='}' and '{' in list1:
+                    if list1[-1]=='{':
+                        list1.pop()
+
+# ( )[]{}        
+        if list1==[]:
+            return True
+        
